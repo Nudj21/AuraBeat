@@ -23,6 +23,9 @@ if (empty($playlist_id)) {
 $song_dir = "../uploads/music/";
 $cover_dir = "../uploads/covers/";
 
+if (!is_dir($song_dir)) mkdir($song_dir, 0777, true);
+if (!is_dir($cover_dir)) mkdir($cover_dir, 0777, true);
+
 $song_file_name = uniqid() . '_' . basename($_FILES["songFile"]["name"]);
 $cover_file_name = uniqid() . '_' . basename($_FILES["coverFile"]["name"]);
 
